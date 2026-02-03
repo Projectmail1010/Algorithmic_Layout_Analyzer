@@ -16,6 +16,36 @@ st.markdown("**System Status:** `Active` | **Engine:** `v1.0.2` | **Mode:** `Geo
 col1, col2 = st.columns([1, 3])
 
 with col1:
+
+    with st.expander("How it Works", expanded=True):
+        st.markdown("""
+        **Core Engine: Geometric Parsing (v1.0.2)**
+        Unlike standard regex parsers that treat PDFs as flat text strings, this engine analyzes the **spatial geometry** of the document.
+        
+        1.  **Font Bootstrap:** Identifies header styles via a 2-pass heuristic scan.
+        2.  **Scan-Line Analysis:** Detects vertical whitespace rivers to identify column splits.
+        3.  **XY-Sort:** Re-sequences text blocks based on visual reading order (Top-Left → Bottom-Right) rather than internal PDF stream order.
+        """)
+
+    st.write("### ✅ Operational Design Domain")
+    st.success("""
+    **Supported Layouts:**
+    * **Single-Column Linear:** Standard chronological resumes.
+    * **Clean 2-Column Grids:** Distinct separation between Left/Right columns.
+    * **Text-Layer PDFs:** Documents generated from Word/LaTeX/Docs.
+    """)
+    
+    st.write("### ⚠️ Known Limitations")
+    st.warning("""
+    **Experimental / Out of Scope:**
+    * **Floating Elements:** Text boxes with absolute positioning that defy standard flow.
+    * **Graphics/Icons:** Visual elements disrupt block recognition.
+    * **Scanned Images:** Requires OCR (planned for v2.0).
+    * **Complex Nested Tables:** May cause sequence fragmentation.
+    """)
+    
+    st.info("💡 **Note to Recruiters:** This project demonstrates *algorithmic layout analysis* rather than commercial-grade parsing. It is designed to visualize how machines 'see' document structure.")
+
     st.write("### Input Source")
     
     # 1. Toggle between Upload and Sample
@@ -39,20 +69,14 @@ with col1:
         else:
             st.error(f"Folder '{resume_folder}' not found. Please create it and add PDFs.")
             
-    st.markdown("---")
-    st.info("""
-    **Architecture Note:**
-    This system uses a 2-stage pass:
-    1. `HeaderExtractor`: bootstraps font styles.
-    2. `LayoutEngine`: calculates geometric column splits.
-    """)
-    
+
     st.markdown("---")
     st.markdown("**Legend:**")
     st.markdown("🟥 **Header** (Name/Title)")
     st.markdown("🟦 **Left Column**")
     st.markdown("🟩 **Right Column**")
     st.markdown("🟧 **Body Text**")
+    st.markdown("🟦 **Cyan Section Block**")
 
 with col2:
     # Logic to handle processing based on mode
