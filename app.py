@@ -46,6 +46,8 @@ with col1:
     
     st.info("💡 **Note to Recruiters:** This project demonstrates *algorithmic layout analysis* rather than commercial-grade parsing. It is designed to visualize how machines 'see' document structure.")
 
+with col2:
+
     st.write("### Input Source")
     
     # 1. Toggle between Upload and Sample
@@ -78,7 +80,6 @@ with col1:
     st.markdown("🟧 **Body Text**")
     st.markdown("🟦 **Cyan Section Block**")
 
-with col2:
     # Logic to handle processing based on mode
     process_path = None
     
