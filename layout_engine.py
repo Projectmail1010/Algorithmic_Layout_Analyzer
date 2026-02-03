@@ -1,5 +1,5 @@
 from pydoc import doc
-import fitz  # PyMuPDF
+import pymupdf as fitz
 def draw_section_boundaries(page, column_blocks, headers, color):
     """
     Groups blocks into sections based on headers and draws a box around the entire group.
