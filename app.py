@@ -1,7 +1,7 @@
 import streamlit as st
 import tempfile
 import os
-import fitz  # PyMuPDF
+import pymupdf as fitz
 
 # IMPORT YOUR CUSTOM MODULES
 from header_extractor import HeaderExtractor
