@@ -75,4 +75,5 @@ Instead of relying solely on Regex (which fails on unique section names), the `H
 
 ## 👤 Author
 
-**[Ayush Vajpayee]** *Final Year BCA Student* [www.linkedin.com/in/ayush-v-19175a3a0]
+**[Ayush Vajpayee]** *Final Year BCA Student* [www.linkedin.com/in/ayush-vajpayee]
+
